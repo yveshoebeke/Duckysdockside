@@ -1,0 +1,14 @@
+down:
+	-docker-compose -f go-app-compose-local.yml down
+
+prune:
+	yes y| docker system prune
+
+runnod:
+	docker-compose -f go-app-compose-local.yml up --build 
+
+run:
+	docker-compose -f go-app-compose-local.yml up --build -d
+
+trial: down runnod
+all: down prune run

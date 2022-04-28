@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="https://duckysdockside.com/sitemap">
+
+   <url>
+      <loc>https://duckysdockside.com/</loc>
+      <lastmod>2022-14-21</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- <url>
+      <loc>https://duckysdockside.com/admin</loc>
+      <lastmod>2022-14-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://duckysdockside.com/adminmenu</loc>
+      <lastmod>2022-14-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://duckysdockside.com/addevent</loc>
+      <lastmod>2022-14-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://duckysdockside.com/manageevents</loc>
+      <lastmod>2022-14-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url> -->
+
+</urlset> 

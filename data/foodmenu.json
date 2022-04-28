@@ -1,0 +1,292 @@
+[
+ {
+  "Name": "Appetizers",
+  "Note": "",
+  "FoodMenuItems": [
+   {
+    "name": "French Fries",
+    "price": "2.50"
+   },
+   {
+    "name": "Corn Dog",
+    "price": "2.50"
+   },
+   {
+    "name": "Chips \u0026 Salsa",
+    "price": "4.50"
+   },
+   {
+    "name": "Mushrooms",
+    "price": "6.50"
+   },
+   {
+    "name": "Okra",
+    "price": "6.50"
+   },
+   {
+    "name": "Cheese Stix",
+    "price": "6.00"
+   },
+   {
+    "name": "Piggy Rolls",
+    "price": "6.00"
+   },
+   {
+    "name": "Fried Green Maters",
+    "price": "7.00"
+   },
+   {
+    "name": "Jalapeno Poppers",
+    "price": "6.50"
+   },
+   {
+    "name": "Gator Bites",
+    "price": "12.00"
+   }
+  ]
+ },
+ {
+  "Name": "Salads",
+  "Note": "",
+  "FoodMenuItems": [
+   {
+    "name": "Side Salad Small",
+    "price": "5.50"
+   },
+   {
+    "name": "Side Salad Large",
+    "price": "8.50"
+   },
+   {
+    "name": "Chef Salad",
+    "price": "9.00"
+   },
+   {
+    "name": "Chicken Salad",
+    "price": "9.00"
+   },
+   {
+    "name": "Steak Salad",
+    "price": "9.00"
+   }
+  ]
+ },
+ {
+  "Name": "Subs \u0026 Sandwiches",
+  "Note": "Add French Fries for 1.50 (all come with chips \u0026 pickle)",
+  "FoodMenuItems": [
+   {
+    "name": "Hamburger",
+    "price": "8.00"
+   },
+   {
+    "name": "Cheeseburger",
+    "price": "8.50"
+   },
+   {
+    "name": "Bacon Cheeseburger",
+    "price": "9.00"
+   },
+   {
+    "name": "Veggie Sub",
+    "price": "8.00"
+   },
+   {
+    "name": "Italian Sub",
+    "price": "8.50"
+   },
+   {
+    "name": "Steak Sub",
+    "price": "9.50"
+   },
+   {
+    "name": "Ruben",
+    "price": "9.00"
+   },
+   {
+    "name": "Club",
+    "price": "9.00"
+   },
+   {
+    "name": "Cuban",
+    "price": "9.50"
+   },
+   {
+    "name": "Kissimmee Swamp",
+    "price": "13.00"
+   },
+   {
+    "name": "Pulled Pork",
+    "price": "7.00"
+   },
+   {
+    "name": "Hatch Fish Sandwich",
+    "price": "11.00"
+   },
+   {
+    "name": "BLT",
+    "price": "6.50"
+   },
+   {
+    "name": "Chicken Sandwich",
+    "price": "8.50"
+   },
+   {
+    "name": "Three Cheese",
+    "price": "6.50"
+   }
+  ]
+ },
+ {
+  "Name": "Snack Packs",
+  "Note": "All come with French Fries",
+  "FoodMenuItems": [
+   {
+    "name": "Chicken Tenders",
+    "price": "11.00"
+   },
+   {
+    "name": "Fried Gator",
+    "price": "15.00"
+   },
+   {
+    "name": "Frog Legs",
+    "price": "15.00"
+   },
+   {
+    "name": "Fried Gator \u0026 Fish Bites",
+    "price": "16.00"
+   },
+   {
+    "name": "Fish Bites",
+    "price": "12.00"
+   }
+  ]
+ },
+ {
+  "Name": "Dinners",
+  "Note": "Comes with 2 Sides \u0026 Salad",
+  "FoodMenuItems": [
+   {
+    "name": "Frog Legs",
+    "price": "19.00"
+   },
+   {
+    "name": "Fried Fish",
+    "price": "14.00"
+   },
+   {
+    "name": "Fried Gator",
+    "price": "16.00"
+   },
+   {
+    "name": "Fried Gator \u0026 Fish",
+    "price": "19.00"
+   },
+   {
+    "name": "Pulled Pork Dinner",
+    "price": "11.00"
+   },
+   {
+    "name": "Pulled Pork Family Dinner - 4 person",
+    "price": "25.00"
+   },
+   {
+    "name": "Pulled Pork Family Dinner - 6 person",
+    "price": "32.00"
+   }
+  ]
+ },
+ {
+  "Name": "Kids Meal",
+  "Note": "Comes with French Fries",
+  "FoodMenuItems": [
+   {
+    "name": "Corn Dog",
+    "price": "6.00"
+   },
+   {
+    "name": "Grilled Cheese",
+    "price": "6.00"
+   },
+   {
+    "name": "Chicken Tenders",
+    "price": "7.00"
+   },
+   {
+    "name": "Hamburger",
+    "price": "7.00"
+   }
+  ]
+ },
+ {
+  "Name": "Wings",
+  "Note": "Comes with Celery \u0026 Carrots. Ranch or Blue Cheese",
+  "FoodMenuItems": [
+   {
+    "name": "5 for",
+    "price": "7.00"
+   },
+   {
+    "name": "10 for",
+    "price": "13.00"
+   },
+   {
+    "name": "20 for",
+    "price": "23.00"
+   }
+  ]
+ },
+ {
+  "Name": "Quesadillas",
+  "Note": "Comes with Lettice, Tomato and Onion on the side",
+  "FoodMenuItems": [
+   {
+    "name": "Cheese",
+    "price": "6.00"
+   },
+   {
+    "name": "Chicken",
+    "price": "7.00"
+   },
+   {
+    "name": "Steak",
+    "price": "8.00"
+   }
+  ]
+ },
+ {
+  "Name": "Sides",
+  "Note": "Add an extra Side for 3.00 - Additional Sauces for 0.50",
+  "FoodMenuItems": [
+   {
+    "name": "Green Beans",
+    "price": ""
+   },
+   {
+    "name": "Baked Beans",
+    "price": ""
+   },
+   {
+    "name": "Collard Greens",
+    "price": ""
+   },
+   {
+    "name": "Fried Okra",
+    "price": ""
+   },
+   {
+    "name": "Slaw",
+    "price": ""
+   },
+   {
+    "name": "French Fries",
+    "price": ""
+   },
+   {
+    "name": "Mushrooms",
+    "price": ""
+   }
+  ]
+ }
+]

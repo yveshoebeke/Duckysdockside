@@ -1,0 +1,143 @@
+/* General */
+.mobileBody {
+    margin: 0 auto;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 30pt;
+    /* background-color: seashell; */
+    background-color: #748638;
+    color: seashell;
+}
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+hr {
+    border: none;
+    height: 2px;
+    color: white;
+    background-color: white;
+}
+.rounded-corners {
+    border-radius: 40px;
+}
+
+/* Main Logo */
+#DDS_Logo {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Images/Carousel */
+.carousel_column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+.carousel_row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.menu_column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+.menu_row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Address & other info */
+.address-line {
+    font-size:75%; 
+    margin:0px; 
+    padding:0px;
+}
+
+/* Food, menu... */
+#swampwagon_bg {
+    background-color: #748638;
+    background-image: url("/static/img/logos/DDS_Swampwagon_Logo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.foodmenu {
+    background-color: seashell;
+    color: black;
+    font-size:50%;
+    padding: 15px;
+}
+.foodmenu-title {
+    text-align:center;
+    text-decoration:underline;
+}
+.foodmenu-container {
+    background-color: #748638;
+}
+hr.foodmenu-ruler {
+    border: none;
+    height: 2px;
+    color: darkolivegreen;;
+    background-color: seashell;
+}
+p.foodnote {
+    font-size: 70%;
+    font-style: italic;
+}
+
+/* Google mini map & API */
+#DDS_Google_map {
+    float:right;
+    border: 1px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    background-image: url("/static/img/google-mini.png");
+}
+
+/* Events */
+.event-link {
+    color: seashell;
+}
+.event-link:hover {
+    color:hotpink;
+}
+.event-title {
+    font-family: 'Brush Script MT', cursive, Verdana, Arial, sans-serif; 
+    font-size:140%;
+}
+.event-title-note {
+    float:right;
+    font-size: 60%; 
+    font-style:italic;
+}
+.event-container{
+    height:450px; 
+    /* width:auto;  */
+    overflow-y:auto; 
+    background-color: seashell; 
+    color:rgb(62, 62, 88);
+}
+.event-table {
+    font-size:80%; 
+    table-layout: fixed; 
+    width: auto;
+}
+.event-date-cell {
+    font-size:70%; 
+    width:200px; 
+    padding-left:15px;
+}
+.event-time-cell {
+    font-size:70%; 
+    width:300px;
+}
+.event-name-cell {
+    width:auto;
+    color:maroon;
+}
+
