@@ -2,7 +2,7 @@
 
 ## Ducky's Dockside Bar & Grill, LLC home page
 
-*A home page to describe, demonstrate and open communications with Bytesupply, LLC*
+*A home page to promote the business and give customers information on its location, amenities and event schedule.*
 
 ### URL
 
