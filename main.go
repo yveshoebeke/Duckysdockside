@@ -21,6 +21,7 @@ import (
 	"time"
 
 	"duckysdockside.com/packages/app"
+	"duckysdockside.com/packages/routes"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
@@ -63,17 +64,17 @@ func main() {
 	mux := mux.NewRouter()
 
 	/* Middleware */
-	mux.Use(app.MiddleWare)
+	mux.Use(routes.MiddleWare)
 
 	/* Allow static content */
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(app.StaticLocation))))
 
 	/* Handlers */
-	mux.HandleFunc("/", app.Home).Methods(http.MethodGet)
-	mux.HandleFunc("/admin", app.Admin).Methods(http.MethodGet, http.MethodPost)
-	mux.HandleFunc("/adminmenu", app.AdminMenu).Methods(http.MethodGet)
-	mux.HandleFunc("/addevent", app.AddEvent).Methods(http.MethodGet, http.MethodPost)
-	mux.HandleFunc("/manageevents", app.ManageEvents).Methods(http.MethodGet, http.MethodPost)
+	mux.HandleFunc("/", routes.Home).Methods(http.MethodGet)
+	mux.HandleFunc("/admin", routes.Admin).Methods(http.MethodGet, http.MethodPost)
+	mux.HandleFunc("/adminmenu", routes.AdminMenu).Methods(http.MethodGet)
+	mux.HandleFunc("/addevent", routes.AddEvent).Methods(http.MethodGet, http.MethodPost)
+	mux.HandleFunc("/manageevents", routes.ManageEvents).Methods(http.MethodGet, http.MethodPost)
 
 	/* Server setup and start */
 	DuckyDocksideServer := &http.Server{
