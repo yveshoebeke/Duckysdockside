@@ -1,0 +1,8 @@
+Makefile
+Dockerfile
+*.yml
+logs/
+doc/
+main
+start
+.DS_Store
