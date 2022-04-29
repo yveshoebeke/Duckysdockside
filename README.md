@@ -17,10 +17,14 @@ https://duckysdockside.com/
 
 - ~~Search~~
 - ~~User registration and login (Sessions to be implemented)~~
+- Admin food menu maintenance.
+- Event image upload.
+- Dynamic photo carousel.
 
 ### Architecture
 
-- Server written in Go
-- CSS and JS files as support
-- Partial templating, mostly static html
-- Containerized and hosted on Digitalocean
+- Server written in Go.
+- CSS and JS files as support.
+- Partial templating, mostly static html.
+- Data stored in JSON format files.
+- Containerized and hosted on Digitalocean.
