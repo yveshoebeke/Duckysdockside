@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	// Get pertinent env. values
+	// Get pertinent env. values.
 	StaticLocation = os.Getenv("DDS_STATIC_LOCATION")
 	Logfile        = os.Getenv("DDS_LOGFILE")
 	ServerPort     = os.Getenv("DDS_SERVER_PORT")
@@ -19,13 +19,13 @@ var (
 	LogFileHandle *os.File
 )
 
-// App
+// App.
 type App struct {
 	Log  *log.Logger
 	User *User
 }
 
-// User
+// User.
 type User struct {
 	Username  string
 	Password  string
@@ -35,10 +35,10 @@ type User struct {
 	LoginTime string
 }
 
-// Setup
+// Setup.
 func init() {
 	var err error
-	// Logging
+	// Logging.
 	Logger = log.New()
 	Logger.SetFormatter(&log.TextFormatter{
 		ForceColors:     false,
@@ -47,7 +47,7 @@ func init() {
 	})
 	Logger.SetLevel(log.InfoLevel)
 
-	// log file set up
+	// log file set up.
 	LogFileHandle, err = os.OpenFile(Logfile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		fmt.Printf("Error opening Logfile: %s -> %v", Logfile, err)

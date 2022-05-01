@@ -15,7 +15,6 @@ import (
 
 var (
 	// Templating
-	// tmpl = template.Must(template.ParseGlob("static/html/"))
 	tmpl *template.Template
 )
 
@@ -71,9 +70,8 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	go func() {
 		defer wg.Done()
 
-		// Set images below logo here.
+		// Set images below logo here. @todo: make dynamic.
 		randomImages = utils.GetDefaultImages()
-		// Todo: Replace above^^^^ with -> randomImages := utils.GetRandomCarouselImages(3).
 	}()
 	// Wait for it all to finish.
 	wg.Wait()
@@ -136,12 +134,12 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Println("Manage Events error:", err)
 		}
-		// Get the newest data from file -> template
+		// Get the newest data from file -> template.
 		eventData, err := events.ReadEventsDataFile(false)
 		if err != nil {
 			log.Error(err)
 		}
-		// tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
+		// Serve page to user.
 		tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/manageevents.go.html"))
 		tmpl.Execute(w, eventData)
 	case http.MethodPost:
@@ -150,13 +148,12 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Error(err)
 		}
-		// Get the newest data from file -> template
+		// Get the newest data from file -> template.
 		eventData, err := events.ReadEventsDataFile(false)
 		if err != nil {
 			log.Error(err)
 		}
 		// Return to page.
-		// tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
 		tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/manageevents.go.html"))
 		tmpl.Execute(w, eventData)
 	}
