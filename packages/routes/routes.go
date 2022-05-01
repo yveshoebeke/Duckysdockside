@@ -16,7 +16,7 @@ import (
 
 var (
 	// Templating
-	tmpl    = template.Must(template.New("").Funcs(funcMap).ParseGlob("static/html/*"))
+	tmpl    = template.Must(template.New("").Funcs(funcMap).ParseGlob("html/*"))
 	funcMap = template.FuncMap{
 		"hasHTTP": func(myUrl string) string {
 			if strings.Contains(myUrl, "://") {
