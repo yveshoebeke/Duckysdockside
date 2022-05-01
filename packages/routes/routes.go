@@ -15,7 +15,8 @@ import (
 
 var (
 	// Templating
-	tmpl = template.Must(template.ParseGlob("static/html/"))
+	// tmpl = template.Must(template.ParseGlob("static/html/"))
+	tmpl *template.Template
 )
 
 /* Routers */
@@ -84,7 +85,8 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		FoodMenu:       foodMenu,
 	}
 	// Serve it to the user.
-	tmpl.ExecuteTemplate(w, "home.go.html", homePageData)
+	tmpl = template.Must(template.ParseFiles("static/html/home.go.html"))
+	tmpl.Execute(w, homePageData)
 }
 
 /* Administration Functionality */
@@ -139,7 +141,9 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Error(err)
 		}
-		tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
+		// tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
+		tmpl = template.Must(template.ParseFiles("static/html/manageevents.go.html"))
+		tmpl.Execute(w, eventData)
 	case http.MethodPost:
 		// Update the incoming posted event data
 		err := events.UpdateEvent(r)
@@ -152,7 +156,9 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 		// Return to page.
-		tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
+		// tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
+		tmpl = template.Must(template.ParseFiles("static/html/manageevents.go.html"))
+		tmpl.Execute(w, eventData)
 	}
 }
 
