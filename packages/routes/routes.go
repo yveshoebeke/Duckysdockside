@@ -85,7 +85,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		FoodMenu:       foodMenu,
 	}
 	// Serve it to the user.
-	tmpl = template.Must(template.ParseFiles("static/html/home.go.html"))
+	tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/home.go.html"))
 	tmpl.Execute(w, homePageData)
 }
 
@@ -142,7 +142,7 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 		// tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
-		tmpl = template.Must(template.ParseFiles("static/html/manageevents.go.html"))
+		tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/manageevents.go.html"))
 		tmpl.Execute(w, eventData)
 	case http.MethodPost:
 		// Update the incoming posted event data
@@ -157,7 +157,7 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 		}
 		// Return to page.
 		// tmpl.ExecuteTemplate(w, "manageevents.go.html", eventData)
-		tmpl = template.Must(template.ParseFiles("static/html/manageevents.go.html"))
+		tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/manageevents.go.html"))
 		tmpl.Execute(w, eventData)
 	}
 }
