@@ -8,7 +8,6 @@ RUN GOOS=linux go build -ldflags="-s -w" -o ./bin/duckysdockside-app ./main.go
 RUN mkdir ./bin/log
 # RUN mkdir -p ./bin/data/qTurHm/
 COPY ./static/ ./bin/static/
-COPY ./static/html/ ./bin/static/html/
 COPY ./sitemap.xml ./bin/sitemap.xml
 COPY ./robots.txt ./bin/robots.txt
 RUN ["chmod", "+x", "/bin"]

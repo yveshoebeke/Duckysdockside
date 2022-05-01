@@ -3,7 +3,6 @@ package routes
 import (
 	"html/template"
 	"net/http"
-	"strings"
 	"sync"
 
 	"duckysdockside.com/packages/app"
@@ -16,24 +15,21 @@ import (
 
 var (
 	// Templating
-	tmpl    = template.Must(template.New("").Funcs(funcMap).ParseGlob("html/*"))
-	funcMap = template.FuncMap{
-		"hasHTTP": func(myUrl string) string {
-			if strings.Contains(myUrl, "://") {
-				return myUrl
-			}
+	tmpl = template.Must(template.ParseGlob("static/html/*"))
+	// tmpl    = template.Must(template.New("").Funcs(funcMap).ParseGlob("html/*"))
+	// funcMap = template.FuncMap{
+	// 	"hasHTTP": func(myUrl string) string {
+	// 		if strings.Contains(myUrl, "://") {
+	// 			return myUrl
+	// 		}
 
-			return "https://" + myUrl
-		},
-		"userStatus": func(myStatus int) string {
-			return ""
-		},
-	}
+	// 		return "https://" + myUrl
+	// 	},
+	// 	"userStatus": func(myStatus int) string {
+	// 		return ""
+	// 	},
+	// }
 )
-
-// Setup
-func init() {
-}
 
 /* Routers */
 /* Home page */
