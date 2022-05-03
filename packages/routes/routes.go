@@ -83,7 +83,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		FoodMenu:       foodMenu,
 	}
 	// Serve it to the user.
-	tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/home.go.html"))
+	tmpl = template.Must(template.ParseFiles(app.TemplateLocation + "home.go.html"))
 	tmpl.Execute(w, homePageData)
 }
 
@@ -92,7 +92,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 func Admin(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		http.ServeFile(w, r, app.StaticLocation+"/html/admin.html")
+		http.ServeFile(w, r, app.HtmlLocation+"admin.html")
 	case http.MethodPost:
 		err := utils.CheckAdminPassword(r)
 		if err != nil {
@@ -107,14 +107,14 @@ func Admin(w http.ResponseWriter, r *http.Request) {
 
 // Admin option selections.
 func AdminMenu(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, app.StaticLocation+"/html/adminmenu.html")
+	http.ServeFile(w, r, app.HtmlLocation+"adminmenu.html")
 }
 
 // Add an event.
 func AddEvent(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		http.ServeFile(w, r, app.StaticLocation+"/html/addevent.html")
+		http.ServeFile(w, r, app.HtmlLocation+"addevent.html")
 	case http.MethodPost:
 		// Add the posted event data.
 		err := events.AddEvent(r)
@@ -122,7 +122,7 @@ func AddEvent(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 		// Return to page.
-		http.ServeFile(w, r, app.StaticLocation+"/html/addevent.html")
+		http.ServeFile(w, r, app.HtmlLocation+"addevent.html")
 	}
 }
 
@@ -140,7 +140,7 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 		// Serve page to user.
-		tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/manageevents.go.html"))
+		tmpl = template.Must(template.ParseFiles(app.TemplateLocation + "manageevents.go.html"))
 		tmpl.Execute(w, eventData)
 	case http.MethodPost:
 		// Update the incoming posted event data
@@ -154,7 +154,7 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 		// Return to page.
-		tmpl = template.Must(template.ParseFiles(app.StaticLocation + "html/manageevents.go.html"))
+		tmpl = template.Must(template.ParseFiles(app.TemplateLocation + "manageevents.go.html"))
 		tmpl.Execute(w, eventData)
 	}
 }
