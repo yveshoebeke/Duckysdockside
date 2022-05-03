@@ -40,6 +40,10 @@ hr {
     clear: both;
     display: table;
 }
+.carousel_container {
+    height: 480px;
+    overflow: hidden;
+}
 .carousel_column {
     float: left;
     width: 33.33%;
@@ -128,7 +132,6 @@ p.foodnote {
 }
 .event-container{
     height:450px; 
-    /* width:auto;  */
     overflow-y:auto; 
     background-color: seashell; 
     color:rgb(62, 62, 88);
