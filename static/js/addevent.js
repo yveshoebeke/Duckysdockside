@@ -95,6 +95,4 @@ $(document).ready(function() {
         $("#doy").text(time.toDateString());
         $("#tod").text(time.toLocaleTimeString());
     }, 1000);
-
-
 })

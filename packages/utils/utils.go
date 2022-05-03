@@ -98,6 +98,7 @@ func FormatDisplayDate(date string) string {
 }
 
 // NOTE: Code below needs to be double-checked and paired with images of appropriate size.
+// This function is currently not used --> remove?
 // Reads static/img/carousel directory
 func GetCarouselImages() []fs.FileInfo {
 	carouselImageFiles, err := ioutil.ReadDir(carouselImagePath)
@@ -124,6 +125,7 @@ func GetCarouselImages() []fs.FileInfo {
 	return carouselImageFiles
 }
 
+// This function is currently not used --> remove?
 func GetRandomCarouselImages(count int) []string {
 	var (
 		result []string
@@ -159,10 +161,20 @@ func GetRandomCarouselImages(count int) []string {
 }
 
 // Temp. solution to populate the carousel section of the home page.
-func GetDefaultImages() []string {
+func GetDefaultImages() ([]string, []string, []string) {
 	return []string{
-		"/static/img/carousel/output-image1647987426793.JPG",
-		"/static/img/carousel/output-image1647987375846.JPG",
-		"/static/img/carousel/imagejpeg-0.JPG",
-	}
+			"/static/img/carousel/output-image1647987426793.JPG",
+			"/static/img/carousel/output-image1647987375846.JPG",
+			"/static/img/carousel/imagejpeg-0.JPG",
+		},
+		[]string{
+			"/static/img/carousel/IMG_3018.jpg",
+			"/static/img/carousel/output-image1647987394780.JPG",
+			"/static/img/carousel/IMG_2995.jpg",
+		},
+		[]string{
+			"/static/img/carousel/IMG_3016.jpg",
+			"/static/img/carousel/IMG_2848.jpg",
+			"/static/img/carousel/IMG_2998.jpg",
+		}
 }

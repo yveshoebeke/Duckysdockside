@@ -29,11 +29,22 @@ hr {
     margin-right: auto;
 }
 
-/* Images/Carousel */
+/* Images/Logos & Carousel */
+.logo_column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+.logo_row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 .carousel_column {
     float: left;
     width: 33.33%;
     padding: 5px;
+    height: 475px;
 }
 .carousel_row::after {
     content: "";
