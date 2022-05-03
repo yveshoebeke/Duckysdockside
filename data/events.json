@@ -1,65 +1,56 @@
 [
- {
-  "id": 1650402659,
-  "date": "05-04-2022",
-  "time": "from 3pm to 8pm",
-  "name": "Perl Jam",
-  "genre": "Pop / Rock, the grunge way",
-  "image": "",
-  "active": true
- },
- {
-  "id": 1650649253,
-  "date": "05-05-2022",
-  "time": "from 2pm to 10pm",
-  "name": "The Doors",
-  "genre": "Classic LA Rock.",
-  "image": "",
-  "active": true
- },
- {
-  "id": 1650649287,
-  "date": "05-06-2022",
-  "time": "from 2pm to 10pm",
-  "name": "Eric Clapton",
-  "genre": "A chance to jam with the greatest",
-  "image": "",
-  "active": true
- },
+{
+"id": 1650402659,
+"date": "05-05-2022",
+"time": "from 6pm to 10pm",
+"name": "Mitch Steward",
+"genre": "Bike Night - Open Jam",
+"image": "",
+"active": true
+},
+{
+"id": 1650649253,
+"date": "05-06-2022",
+"time": "from 2pm to 10pm",
+"name": "Patrick's Kicking Karaoke",
+"genre": "Come and sing along",
+"image": "",
+"active": true
+},
+{
+"id": 1650402660,
+"date": "05-12-2022",
+"time": "from 6pm to 10pm",
+"name": "Mitch Steward",
+"genre": "Bike Night - Open Jam",
+"image": "",
+"active": true
+},
+{
+"id": 1650649254,
+"date": "05-13-2022",
+"time": "from 2pm to 10pm",
+"name": "Patrick's Kicking Karaoke",
+"genre": "Come and sing along",
+"image": "",
+"active": true
+},
  {
   "id": 1650649380,
   "date": "05-07-2022",
-  "time": "from 2pm to 10pm",
-  "name": "Steam Punk",
-  "genre": "Punk and funck",
+  "time": "from 3pm to 7pm",
+  "name": "Hairball",
+  "genre": "Solo Act",
   "image": "",
   "active": true
  },
  {
   "id": 1650647823,
   "date": "05-08-2022",
-  "time": "from 2pm to 10pm",
-  "name": "The Rolling Stones",
-  "genre": "Timeless Rock and Blues band",
+  "time": "from 6pm to 10pm",
+  "name": "Spitfire Band",
+  "genre": "Timeless Rock and Roll",
   "image": "",
   "active": true
- },
- {
-  "id": 1650651566,
-  "date": "05-09-2022",
-  "time": "from 2pm to 8pm",
-  "name": "Beth's rock and roll",
-  "genre": "Greatest music ever",
-  "image": "",
-  "active": true
- },
- {
-  "id": 1650648823,
-  "date": "05-10-2022",
-  "time": "from 2pm to 5pm",
-  "name": "DJ Stoner",
-  "genre": "Music, fun and takes requests...",
-  "image": "",
-  "active": false
  }
 ]
