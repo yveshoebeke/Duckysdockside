@@ -11,9 +11,11 @@ import (
 
 var (
 	// Get pertinent env. values.
-	StaticLocation = os.Getenv("DDS_STATIC_LOCATION")
-	Logfile        = os.Getenv("DDS_LOGFILE")
-	ServerPort     = os.Getenv("DDS_SERVER_PORT")
+	StaticLocation   = os.Getenv("DDS_STATIC_LOCATION")
+	HtmlLocation     = StaticLocation + os.Getenv("DDS_HTML_LOCATION")
+	TemplateLocation = os.Getenv("DDS_TEMPLATE_LOCATION")
+	Logfile          = os.Getenv("DDS_LOGFILE")
+	ServerPort       = os.Getenv("DDS_SERVER_PORT")
 	// Logging.
 	Logger        *log.Logger
 	LogFileHandle *os.File
