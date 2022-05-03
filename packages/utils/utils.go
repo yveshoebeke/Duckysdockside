@@ -180,7 +180,7 @@ func GetDefaultImages() [][]string {
 		},
 		{
 			"/static/img/carousel/IMG_2849.jpg",
-			"/static/img/carousel/IMG_9999.png",
+			"/static/img/carousel/IMG_2991.jpg",
 			"/static/img/carousel/IMG_3015.jpg",
 		},
 	}
