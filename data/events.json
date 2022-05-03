@@ -1,40 +1,22 @@
 [
-{
-"id": 1650402659,
-"date": "05-05-2022",
-"time": "from 6pm to 10pm",
-"name": "Mitch Steward",
-"genre": "Bike Night - Open Jam",
-"image": "",
-"active": true
-},
-{
-"id": 1650649253,
-"date": "05-06-2022",
-"time": "from 2pm to 10pm",
-"name": "Patrick's Kicking Karaoke",
-"genre": "Come and sing along",
-"image": "",
-"active": true
-},
-{
-"id": 1650402660,
-"date": "05-12-2022",
-"time": "from 6pm to 10pm",
-"name": "Mitch Steward",
-"genre": "Bike Night - Open Jam",
-"image": "",
-"active": true
-},
-{
-"id": 1650649254,
-"date": "05-13-2022",
-"time": "from 2pm to 10pm",
-"name": "Patrick's Kicking Karaoke",
-"genre": "Come and sing along",
-"image": "",
-"active": true
-},
+ {
+  "id": 1650402659,
+  "date": "05-05-2022",
+  "time": "from 6pm to 10pm",
+  "name": "Mitch Steward",
+  "genre": "Bike Night - Open Jam",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1650649253,
+  "date": "05-06-2022",
+  "time": "from 2pm to 10pm",
+  "name": "Patrick's Kicking Karaoke",
+  "genre": "Come and sing along",
+  "image": "",
+  "active": true
+ },
  {
   "id": 1650649380,
   "date": "05-07-2022",
@@ -50,6 +32,60 @@
   "time": "from 6pm to 10pm",
   "name": "Spitfire Band",
   "genre": "Timeless Rock and Roll",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1650402660,
+  "date": "05-12-2022",
+  "time": "from 6pm to 10pm",
+  "name": "Mitch Steward",
+  "genre": "Bike Night - Open Jam",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1650649254,
+  "date": "05-13-2022",
+  "time": "from 2pm to 10pm",
+  "name": "Patrick's Kicking Karaoke",
+  "genre": "Come and sing along",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1651595262,
+  "date": "05-19-2022",
+  "time": "from 6pm to 10pm",
+  "name": "Mitch Steward",
+  "genre": "Bike Night - Open Jam",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1651595323,
+  "date": "05-20-2022",
+  "time": "from 2pm to 10pm",
+  "name": "Patrick's Kicking Karaoke",
+  "genre": "Come and sing along",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1651596265,
+  "date": "05-26-2022",
+  "time": "from 6pm to 10pm",
+  "name": "Mitch Steward",
+  "genre": "Bike Night - Open Jam",
+  "image": "",
+  "active": true
+ },
+ {
+  "id": 1651596297,
+  "date": "05-27-2022",
+  "time": "from 2pm to 10pm",
+  "name": "Patrick's Kicking Karaoke",
+  "genre": "Come and sing along",
   "image": "",
   "active": true
  }
