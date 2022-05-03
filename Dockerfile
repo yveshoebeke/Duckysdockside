@@ -6,6 +6,7 @@ RUN go get ./...
 RUN GOOS=linux go build -ldflags="-s -w" -o ./bin/duckysdockside-app ./main.go
 RUN mkdir ./bin/logs
 COPY ./static/ ./bin/static/
+COPY ./templates/ ./bin/templates/
 COPY ./data/ ./bin/data/
 COPY ./sitemap.xml ./bin/sitemap.xml
 COPY ./robots.txt ./bin/robots.txt
