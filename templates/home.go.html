@@ -45,10 +45,11 @@
             </div>
 
             <!-- Carousel space -->
-                <div id="carousel1" class="row">
+            {{ range $index, $carousel := .CarouselImages }}
+                <div id="carousel_{{$index}}" class="row">
                     <div class="col-md-12">
                         <div class="carousel_row">
-                            {{ range .Carousel1Images }}
+                            {{ range $carousel }}
                             <div class="carousel_column">
                                 <img src={{ . }} style="width:100%">
                             </div>
@@ -56,30 +57,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="carousel2" class="row">
-                    <div class="col-md-12">
-                        <div class="carousel_row">
-                            {{ range .Carousel2Images }}
-                            <div class="carousel_column">
-                                <img src={{ . }} style="width:100%">
-                            </div>
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carousel3" class="row">
-                    <div class="col-md-12">
-                        <div class="carousel_row">
-                            {{ range .Carousel3Images }}
-                            <div class="carousel_column">
-                                <img src={{ . }} style="width:100%">
-                            </div>
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
+            {{ end }}
 
             <hr>
 
@@ -90,7 +68,7 @@
                     <img style="float:left; margin-right:15px;" src="/static/img/carbike_Icon.png" alt="address" height="80" width="160">
                     <div>
                         <p class="address-line">1090 Shady Cove Road</p>
-                        <p class="address-line">Haines City, Florida 33844</p>
+                        <p class="address-line">Haines City, FL 33844</p>
                     </div>
                     <hr>
                     <p><img src="/static/img/phone_Icon.png" width="50" height="50">&nbsp;(863) 353-5295</p>
