@@ -43,46 +43,43 @@
                     </div>
                 </div>
             </div>
-            <div style="display:block; height:480px;">
+
+            <!-- Carousel space -->
                 <div id="carousel1" class="row">
                     <div class="col-md-12">
-                        <!-- Carousel space -->
                         <div class="carousel_row">
-                            {{ range .CarouselImages }}
+                            {{ range .Carousel1Images }}
                             <div class="carousel_column">
                                 <img src={{ . }} style="width:100%">
                             </div>
                             {{ end }}
-                    </div>
+                        </div>
                     </div>
                 </div>
 
                 <div id="carousel2" class="row">
                     <div class="col-md-12">
-                        <!-- Carousel space -->
                         <div class="carousel_row">
                             {{ range .Carousel2Images }}
                             <div class="carousel_column">
                                 <img src={{ . }} style="width:100%">
                             </div>
                             {{ end }}
-                    </div>
+                        </div>
                     </div>
                 </div>
 
                 <div id="carousel3" class="row">
                     <div class="col-md-12">
-                        <!-- Carousel space -->
                         <div class="carousel_row">
                             {{ range .Carousel3Images }}
                             <div class="carousel_column">
                                 <img src={{ . }} style="width:100%">
                             </div>
                             {{ end }}
-                    </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <hr>
 

@@ -12,7 +12,7 @@ $(document).ready(function() {
                 carousel = 1
             }
             id = "#carousel" + carousel
-            $(id).fadeIn("slow")
+            $(id).fadeTo("slow", 1)
         })
    }, 20000);
 })
