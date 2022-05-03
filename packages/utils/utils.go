@@ -161,20 +161,27 @@ func GetRandomCarouselImages(count int) []string {
 }
 
 // Temp. solution to populate the carousel section of the home page.
-func GetDefaultImages() ([]string, []string, []string) {
-	return []string{
+func GetDefaultImages() [][]string {
+	return [][]string{
+		{
 			"/static/img/carousel/output-image1647987426793.JPG",
 			"/static/img/carousel/output-image1647987375846.JPG",
 			"/static/img/carousel/imagejpeg-0.JPG",
 		},
-		[]string{
+		{
 			"/static/img/carousel/IMG_3018.jpg",
 			"/static/img/carousel/output-image1647987394780.JPG",
 			"/static/img/carousel/IMG_2995.jpg",
 		},
-		[]string{
+		{
 			"/static/img/carousel/IMG_3016.jpg",
 			"/static/img/carousel/IMG_2848.jpg",
 			"/static/img/carousel/IMG_2998.jpg",
-		}
+		},
+		{
+			"/static/img/carousel/IMG_2849.jpg",
+			"/static/img/carousel/IMG_9999.png",
+			"/static/img/carousel/IMG_3015.jpg",
+		},
+	}
 }

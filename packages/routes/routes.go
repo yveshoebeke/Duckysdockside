@@ -23,22 +23,18 @@ var (
 func Home(w http.ResponseWriter, r *http.Request) {
 	// Predefined here for go-routines
 	var (
-		err        error
-		eventData  events.Events
-		eventsData events.DisplayEvents
-		foodMenu   menus.FoodMenu
-		carousel1  []string
-		carousel2  []string
-		carousel3  []string
+		err            error
+		eventData      events.Events
+		eventsData     events.DisplayEvents
+		foodMenu       menus.FoodMenu
+		carouselImages [][]string
 	)
 
 	// Home page template data structure.
 	type HomePageData struct {
-		EventData       events.DisplayEvents
-		Carousel1Images []string
-		Carousel2Images []string
-		Carousel3Images []string
-		FoodMenu        menus.FoodMenu
+		EventData      events.DisplayEvents
+		CarouselImages [][]string
+		FoodMenu       menus.FoodMenu
 	}
 
 	// Group for concurrency -> events, food and images data fetching threads.
@@ -75,18 +71,16 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		defer wg.Done()
 
 		// Set images below logo here. @todo: make dynamic.
-		carousel1, carousel2, carousel3 = utils.GetDefaultImages()
+		carouselImages = utils.GetDefaultImages()
 	}()
 	// Wait for it all to finish.
 	wg.Wait()
 
 	// Assign data to the struct the home template.
 	homePageData := HomePageData{
-		EventData:       eventsData,
-		Carousel1Images: carousel1,
-		Carousel2Images: carousel2,
-		Carousel3Images: carousel3,
-		FoodMenu:        foodMenu,
+		EventData:      eventsData,
+		CarouselImages: carouselImages,
+		FoodMenu:       foodMenu,
 	}
 	// Serve it to the user.
 	tmpl = template.Must(template.ParseFiles(app.TemplateLocation + "home.go.html"))
