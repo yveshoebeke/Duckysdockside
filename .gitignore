@@ -1,8 +1,10 @@
 Makefile
 Dockerfile
 *.yml
-logs/
+*.log
+logs/duckysdockside.log
 doc/
 main
 start
 .DS_Store
+.gitignore

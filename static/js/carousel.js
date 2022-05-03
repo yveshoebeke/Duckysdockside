@@ -1,17 +1,23 @@
 $(document).ready(function() {
-    $("#carousel1").show()
-    $("#carousel2").hide()
-    $("#carousel3").hide()
-    var carousel = 1;
+    var noOfCarousels = $(".carousel_row").length
+    var maxFade = 0.05
+    var carouselId = "#carousel"
+
+    for (var currentCarousel = noOfCarousels; currentCarousel > 1; currentCarousel--){
+        id = carouselId + currentCarousel
+        $(id).hide()
+    }
+    $(carouselId + currentCarousel).show()
+
     setInterval(function() {
-    id = "#carousel" + carousel
-        $(id).fadeTo("slow", 0.05,function(){
+    id = carouselId + currentCarousel
+        $(id).fadeTo("slow", maxFade, function(){
             $(id).hide()
-            carousel += 1
-            if (carousel > 3) {
-                carousel = 1
+            currentCarousel += 1
+            if (currentCarousel > noOfCarousels) {
+                currentCarousel = 1
             }
-            id = "#carousel" + carousel
+            id = carouselId + currentCarousel
             $(id).fadeTo("slow", 1)
         })
    }, 20000);
