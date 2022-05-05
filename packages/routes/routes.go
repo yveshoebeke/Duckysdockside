@@ -28,6 +28,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		eventsData     events.DisplayEvents
 		foodMenu       menus.FoodMenu
 		carouselImages [][]string
+		wxData         utils.WxData
 	)
 
 	// Home page template data structure.
@@ -35,11 +36,21 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		EventData      events.DisplayEvents
 		CarouselImages [][]string
 		FoodMenu       menus.FoodMenu
+		Weather        utils.WxData
 	}
 
-	// Group for concurrency -> events, food and images data fetching threads.
+	// Group for concurrency -> weather, events, food and images data fetching threads.
 	wg := new(sync.WaitGroup)
-	// 1. Fetch & format event schedule.
+	// 1. Get current local weather data.
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		wxData, err = utils.CurrentWeather()
+		if err != nil {
+			log.Error("Weather:", err)
+		}
+	}()
+	// 2. Fetch & format event schedule.
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -55,7 +66,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 	}()
-	// 2. Fetching menu data.
+	// 3. Fetching menu data.
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -65,7 +76,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 	}()
-	// 3. Fetch image carousel file names.
+	// 4. Fetch image carousel file names.
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -81,7 +92,9 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		EventData:      eventsData,
 		CarouselImages: carouselImages,
 		FoodMenu:       foodMenu,
+		Weather:        wxData,
 	}
+
 	// Serve it to the user.
 	tmpl = template.Must(template.ParseFiles(app.TemplateLocation + "home.go.html"))
 	tmpl.Execute(w, homePageData)
