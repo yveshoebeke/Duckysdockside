@@ -131,7 +131,7 @@ p.foodnote {
     font-style:italic;
 }
 .event-container{
-    height:450px; 
+    height:500px; 
     overflow-y:auto; 
     background-color: seashell; 
     color:rgb(62, 62, 88);
@@ -143,14 +143,21 @@ p.foodnote {
 }
 .event-date-cell {
     font-size:70%; 
-    width:200px; 
-    padding-left:15px;
+    width:300px; 
+    padding-left:10px;
 }
 .event-time-cell {
-    font-size:70%; 
-    width:300px;
+    font-size:50%; 
+    width:300px; 
+    padding-left:10px;
 }
 .event-name-cell {
+    width:auto;
+    color:maroon;
+}
+.event-genre-cell {
+    font-size:50%;
+    Font-style:italic;
     width:auto;
     color:maroon;
 }
