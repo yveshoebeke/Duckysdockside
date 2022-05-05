@@ -28,6 +28,19 @@ import (
 	"github.com/gorilla/mux"
 )
 
+var sys app.App
+
+/* Middleware */
+func MiddleWare(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Research below and other potential actions.
+		sys.Log.Printf("URL: %s | Method: %s", r.URL.Path, r.Method)
+		next.ServeHTTP(w, r)
+	})
+}
+
+/* End Middleware */
+
 /*
        ^ ^
       (o O)
@@ -45,20 +58,8 @@ import (
 func main() {
 	// See app package for assignment.
 	defer app.LogFileHandle.Close()
-	// Set uo a general purpose user.
-	user := &app.User{
-		Username:  "WWW",
-		Password:  "*",
-		Realname:  "Visitor",
-		Title:     "visitor",
-		LastLogin: time.Now().Format(time.RFC3339),
-		LoginTime: time.Now().Format(time.RFC3339),
-	}
 	// Set the app values in the struct.
-	sys := &app.App{
-		Log:  app.Logger,
-		User: user,
-	}
+	sys.Log = app.Logger
 	// Show in the console app has started.
 	sys.Log.Println("Starting service.")
 
@@ -66,7 +67,7 @@ func main() {
 	mux := mux.NewRouter()
 
 	/* Middleware */
-	mux.Use(routes.MiddleWare)
+	mux.Use(MiddleWare)
 
 	/* Allow static content */
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(app.StaticLocation))))
