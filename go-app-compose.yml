@@ -16,5 +16,6 @@ services:
       - DDS_HTML_LOCATION=html/
       - DDS_TEMPLATE_LOCATION=/go/bin/templates/
       - DDS_SERVER_PORT=:80
+      - DDS_WEATHERAPI=71c3f677cbb242889f4173533220505
       - DDS_ADMIN_PASSWORD=DocksideSecrets101!
       #sslmode = REQUIRED
