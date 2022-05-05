@@ -11,6 +11,7 @@ run:
 	export DDS_HTML_LOCATION=html/
 	export DDS_TEMPLATE_LOCATION=templates/	
 	export DDS_SERVER_PORT=:80
+	export DDS_WEATHERAPI_TOKEN=71c3f677cbb242889f4173533220505
 	export DDS_ADMIN_PASSWORD="DocksideSecrets101!"
 
 	./$(SCRDIR)main

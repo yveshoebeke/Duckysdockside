@@ -15,13 +15,13 @@ import (
 const (
 	adminToken        = "DDS_ADMIN_TOKEN"
 	carouselImagePath = "static/img/carousel/"
-	weatherApiToken   = "71c3f677cbb242889f4173533220505"
 )
 
 var (
-	adminPwd = os.Getenv("DDS_ADMIN_PASSWORD")
-	wxURL    = fmt.Sprintf("%s%s%s", "http://api.weatherapi.com/v1/current.json?key=", weatherApiToken, "&q=Haines%20City&aqi=no")
-	client   *http.Client
+	adminPwd        = os.Getenv("DDS_ADMIN_PASSWORD")
+	weatherApiToken = os.Getenv("DDS_WEATHERAPI_TOKEN")
+	wxURL           = fmt.Sprintf("%s%s%s", "http://api.weatherapi.com/v1/current.json?key=", weatherApiToken, "&q=Haines%20City&aqi=no")
+	client          *http.Client
 )
 
 // See reference: https://www.weatherapi.com/api-explorer.aspx
