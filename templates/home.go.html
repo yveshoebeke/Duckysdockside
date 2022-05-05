@@ -66,7 +66,8 @@
             <div class="row">
                 <div class="col-md-7">
                     <p style="font-family: 'Brush Script MT', cursive, Verdana, Arial, sans-serif; font-size:120%">Music everyday at Lake Marion.</p>
-                    <p style="font-size:60%; font-style:italic;">Open Thursday to Sunday from 11am to 11pm</p>
+                    <hr>
+                    <p style="font-size:60%; font-style:italic;">Open Thursday to Sunday,</p><p style="font-size:60%; font-style:italic;">from 11am to 11pm</p>
                     <hr>
                     <img style="float:left; margin-right:15px;" src="/static/img/carbike_Icon.png" alt="address" height="80" width="160">
                     <div>
@@ -85,6 +86,34 @@
                 </div>
                 <div class="col-md-5">
                     <div id="DDS_Google_map" style="float:right;"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row" id="upcoming_events">
+                <div class="col-md-12">
+                    <p class="event-title-note">(Dates & times subject to change)</p>
+                    <p class="event-title">Upcoming Events:</p>
+                    <div class="event-container">
+                        <table class="event-table">
+                            {{ range .EventData }}
+                            <tr>
+                                <td><p class="event-date-cell">{{ .DisplayDate }}</p><p class="event-time-cell">{{ .DisplayTime }}</p></td>
+                                <td><p class="event-name-cell">{{ .DisplayName }}</p><p class="event-genre-cell">{{ .DisplayGenre }}</p></td>
+                            </tr>
+                            <!--<tr>
+                                <td class="event-time-cell"></td>
+                            </tr>
+                            <tr >
+                                <td colspan="2"></td>
+                                <td style="font-size:70%; width:auto;">{{ .DisplayGenre }}</td>
+                            </tr> -->
+                            <tr style="height:15px;border-bottom: 1px dashed maroon;"></tr>
+                            <tr style="height:15px;"></tr>
+                            {{ end }}
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -110,32 +139,6 @@
                             {{ end }}
                         <hr class="foodmenu-ruler">
                         {{ end}}
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row" id="upcoming_events">
-                <div class="col-md-12">
-                    <p class="event-title-note">(Dates & times subject to change)</p>
-                    <p class="event-title">Upcoming Events:</p>
-                    <div class="event-container">
-                        <table class="event-table">
-                            {{ range .EventData }}
-                            <tr>
-                                <td class="event-date-cell">{{ .DisplayDate }}</td>
-                                <td class="event-time-cell">{{ .DisplayTime }}</td>
-                                <td class="event-name-cell">{{ .DisplayName }}</td>
-                            </tr>
-                            <tr >
-                                <td colspan="2"></td>
-                                <td style="font-size:70%; width:auto;">{{ .DisplayGenre }}</td>
-                            </tr>
-                            <tr style="height:15px;border-bottom: 1px dashed maroon;"></tr>
-                            <tr style="height:15px;"></tr>
-                            {{ end }}
-                        </table>
                     </div>
                 </div>
             </div>

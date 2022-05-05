@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var intervalTime = 10000
-    var noOfCarousels = 4
+    var noOfCarousels = $(".carousel_row").length
+    console.log(noOfCarousels)
     var maxFade = 0.05
     var carouselId = "#carousel_"
 
