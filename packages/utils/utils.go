@@ -1,9 +1,11 @@
 package utils
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/fs"
 	"io/ioutil"
+	"math"
 	"math/rand"
 	"net/http"
 	"os"
@@ -13,11 +15,42 @@ import (
 const (
 	adminToken        = "DDS_ADMIN_TOKEN"
 	carouselImagePath = "static/img/carousel/"
+	weatherApiToken   = "71c3f677cbb242889f4173533220505"
 )
 
 var (
 	adminPwd = os.Getenv("DDS_ADMIN_PASSWORD")
+	wxURL    = fmt.Sprintf("%s%s%s", "http://api.weatherapi.com/v1/current.json?key=", weatherApiToken, "&q=Haines%20City&aqi=no")
+	client   *http.Client
 )
+
+// See reference: https://www.weatherapi.com/api-explorer.aspx
+type WxData struct {
+	Location interface{}   `json:"location"`
+	Current  CurrentWxData `json:"current"`
+}
+
+type CurrentWxData struct {
+	LastUpdateEpoch int       `json:"last_updated_epoch"`
+	LastUpdate      string    `json:"last_updated"`
+	TempC           float32   `json:"temp_c"`
+	TempF           float32   `json:"temp_f"`
+	IsDay           int       `json:"is_day"`
+	Condition       Condition `json:"condition"`
+	WindMPH         float32   `json:"wind_mph"`
+	WindKPH         float32   `json:"wind_kph"`
+	WindDegree      int       `json:"wind_degree"`
+	WindDirection   string    `json:"wind_dir"`
+	FillerEnd1      interface{}
+	Humidity        int `json:"humidity"`
+	FillerEnd2      interface{}
+}
+
+type Condition struct {
+	Text string `json:"text"`
+	Icon string `json:"icon"`
+	Code int    `json:"code"`
+}
 
 // Check if correct password was provided to gin access to admin menu and admin functionalities.
 func CheckAdminPassword(r *http.Request) error {
@@ -125,7 +158,7 @@ func GetCarouselImages() []fs.FileInfo {
 	return carouselImageFiles
 }
 
-// This function is currently not used --> remove?
+// This function is currently not used (see GetDefaultImages() ) --> remove?
 func GetRandomCarouselImages(count int) []string {
 	var (
 		result []string
@@ -184,4 +217,26 @@ func GetDefaultImages() [][]string {
 			"/static/img/carousel/IMG_3015.jpg",
 		},
 	}
+}
+
+func CurrentWeather() (WxData, error) {
+	var wxData WxData
+	err := getJson(wxURL, &wxData)
+	if err != nil {
+		return WxData{}, err
+	}
+
+	wxData.Current.WindMPH = float32(math.Round(float64(wxData.Current.WindMPH))) // rounding the windspeed...
+	return wxData, nil
+}
+
+func getJson(url string, target interface{}) error {
+	client = &http.Client{Timeout: 10 * time.Second}
+	resp, err := client.Get(url)
+	if err != nil {
+		return err
+	}
+
+	defer resp.Body.Close()
+	return json.NewDecoder(resp.Body).Decode(&target)
 }
