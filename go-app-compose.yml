@@ -9,7 +9,7 @@ services:
       - VIRTUAL_HOST=duckysdockside.com
       - LETSENCRYPT_HOST=duckysdockside.com
       - DDS_SERVICE_VERSION=PRODUCTION
-      - DDS_LOGFILE=/go/bin/logs/duckydockside.log
+      - DDS_LOGFILE=/go/bin/logs/duckysdockside.log
       - DDS_EVENTSDATAFILE=/go/bin/data/events.json
       - DDS_FOODMENUDATAFILE=/go/bin/data/foodmenu.json
       - DDS_STATIC_LOCATION=/go/bin/static/

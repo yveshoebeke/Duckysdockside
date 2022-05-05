@@ -173,14 +173,3 @@ func ManageEvents(w http.ResponseWriter, r *http.Request) {
 }
 
 /* End Administration routines */
-
-/* Middleware */
-func MiddleWare(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Research below and other potential actions.
-		// app.Log.Printf("User: %s | URL: %s | Method: %s", app.User.Username, r.URL.Path, r.Method)
-		next.ServeHTTP(w, r)
-	})
-}
-
-/* End Middleware */
