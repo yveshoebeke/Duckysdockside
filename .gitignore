@@ -3,7 +3,7 @@ Dockerfile
 *.yml
 *.log
 logs/duckysdockside.log
-doc/
+# doc/
 main
 start
 .DS_Store

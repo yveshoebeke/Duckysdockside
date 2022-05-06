@@ -87,12 +87,15 @@
                 <div class="col-md-5">
                     <div id="DDS_Google_map"></div>
                     <div class="wx-container">
-                        <img class="wx-icon" src="{{ .Weather.Current.Condition.Icon }}" alt="{{ .Weather.Current.Condition.Text }}">
+                        <img id="wx-icon" src="{{ .Weather.Current.Condition.Icon }}" alt="{{ .Weather.Current.Condition.Text }}">
                         <div class="wx-text">
                             <p>Temp:&nbsp;{{ .Weather.Current.TempF }}&#176;F&nbsp;Humidity:&nbsp;{{ .Weather.Current.Humidity }}&#37;</p>
                             <p>Wind:&nbsp;{{ .Weather.Current.WindMPH }}&nbsp;mph&nbsp;from the&nbsp;{{ .Weather.Current.WindDirection }}</p>
                         </div>
                    </div>
+                   <div id="wx-popup">
+                        {{ .Weather.Current.Condition.Text}}
+                    </div>
                 </div>
             </div>
 

@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var intervalTime = 10000
     var noOfCarousels = $(".carousel_row").length
-    console.log(noOfCarousels)
     var maxFade = 0.05
     var carouselId = "#carousel_"
 
@@ -23,4 +22,16 @@ $(document).ready(function() {
             $(id).fadeTo("slow", 1)
         })
    }, intervalTime);
+
+   // Hoover over wx-icon... as a bonus
+   $("#wx-icon").hover( 
+        function() {
+            $("#wx-popup").show()
+            console.log("in")
+        },
+        function() {
+            $("#wx-popup").hide()
+            console.log("out")
+        }
+   )
 })
