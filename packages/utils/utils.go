@@ -9,6 +9,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -19,6 +20,7 @@ const (
 )
 
 var (
+	wxURL    = "http://api.weatherapi.com/v1/current.json?key={{token}}&q=Haines%20City&aqi=no"
 	adminPwd = os.Getenv("DDS_ADMIN_PASSWORD")
 	client   *http.Client
 )
@@ -32,12 +34,12 @@ type WxData struct {
 type CurrentWxData struct {
 	LastUpdateEpoch int       `json:"last_updated_epoch"`
 	LastUpdate      string    `json:"last_updated"`
-	TempC           float32   `json:"temp_c"`
-	TempF           float32   `json:"temp_f"`
+	TempC           float64   `json:"temp_c"`
+	TempF           float64   `json:"temp_f"`
 	IsDay           int       `json:"is_day"`
 	Condition       Condition `json:"condition"`
-	WindMPH         float32   `json:"wind_mph"`
-	WindKPH         float32   `json:"wind_kph"`
+	WindMPH         float64   `json:"wind_mph"`
+	WindKPH         float64   `json:"wind_kph"`
 	WindDegree      int       `json:"wind_degree"`
 	WindDirection   string    `json:"wind_dir"`
 	FillerEnd1      interface{}
@@ -220,14 +222,15 @@ func GetDefaultImages() [][]string {
 
 func CurrentWeather() (WxData, error) {
 	var wxData WxData
-	var wxURL = fmt.Sprintf("%s%s%s", "http://api.weatherapi.com/v1/current.json?key=", os.Getenv(weatherApiToken), "&q=Haines%20City&aqi=no")
+	wxURL = strings.Replace(wxURL, "{{token}}", os.Getenv(weatherApiToken), 1)
 
 	err := getJson(wxURL, &wxData)
 	if err != nil {
 		return WxData{}, err
 	}
-
-	wxData.Current.WindMPH = float32(math.Round(float64(wxData.Current.WindMPH))) // rounding the windspeed...
+	// rounding the temperature & windspeed... (no decimals needed)
+	wxData.Current.TempF = math.Round(wxData.Current.TempF)
+	wxData.Current.WindMPH = math.Round(wxData.Current.WindMPH)
 	return wxData, nil
 }
 

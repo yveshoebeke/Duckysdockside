@@ -111,6 +111,7 @@ p.foodnote {
     margin: 10px;
     width: 300px;
     height: 300px;
+    border-radius: 5px;
     background-image: url("/static/img/google-mini.png");
 }
 
@@ -118,18 +119,31 @@ p.foodnote {
 .wx-container {
     height:70px;
     width:300px;
+    border-radius: 5px;
     background-color: blue; 
     float:right; 
     margin-bottom: 5px;
     margin-right:10px;
     font-size:35%
 }
-.wx-icon {
+#wx-icon {
     float:left;
 }
 .wx-text {
     float:right; 
     margin-right:5px;
+}
+#wx-popup {
+    background-color:aquamarine;
+    border-radius: 5px;
+    display:none;
+    margin-top:400px;
+    height:30px;
+    width:150px;
+    padding:5px;
+    text-align:center;
+    font-size: 35%;
+    color:black;
 }
 
 /* Events */
