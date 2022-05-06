@@ -89,9 +89,9 @@
                     <div class="wx-container">
                         <img id="wx-icon" src="{{ .Weather.Current.Condition.Icon }}" alt="{{ .Weather.Current.Condition.Text }}">
                         <div class="wx-text">
-                            <p>Temp:&nbsp;{{ .Weather.Current.TempF }}&#176;F&nbsp;Humidity:&nbsp;{{ .Weather.Current.Humidity }}&#37;</p>
-                            <p>Wind:&nbsp;{{ .Weather.Current.WindMPH }}&nbsp;mph&nbsp;from the&nbsp;{{ .Weather.Current.WindDirection }}</p>
-                            <p>Today's Sunset is at&nbsp;{{ .Weather.Current.Sunset }}</p>
+                            <p class="wx-text-element">Temp:&nbsp;{{ .Weather.Current.TempF }}&#176;F&nbsp;Humidity:&nbsp;{{ .Weather.Current.Humidity }}&#37;</p>
+                            <p class="wx-text-element">Wind:&nbsp;{{ .Weather.Current.WindMPH }}&nbsp;mph&nbsp;from the&nbsp;{{ .Weather.Current.WindDirection }}</p>
+                            <p class="wx-text-element">Today's Sunset is at&nbsp;{{ .Weather.Current.Sunset }}</p>
                         </div>
                    </div>
                    <div id="wx-popup">

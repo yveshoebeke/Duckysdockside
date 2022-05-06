@@ -117,7 +117,7 @@ p.foodnote {
 
 /* Weather */
 .wx-container {
-    height:100px;
+    height:65px;
     width:300px;
     border-radius: 5px;
     background-color: blue; 
@@ -132,6 +132,9 @@ p.foodnote {
 .wx-text {
     float:right; 
     margin-right:5px;
+}
+.wx-text-element {
+    margin-bottom: 0;
 }
 #wx-popup {
     background-color:aquamarine;
