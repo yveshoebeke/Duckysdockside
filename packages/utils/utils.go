@@ -21,6 +21,7 @@ const (
 
 var (
 	wxURL    = "http://api.weatherapi.com/v1/current.json?key={{token}}&q=Haines%20City&aqi=no"
+	astroURL = "http://api.weatherapi.com/v1/astronomy.json?key={{token}}&q=Haines%20City&dt={{today}}"
 	adminPwd = os.Getenv("DDS_ADMIN_PASSWORD")
 	client   *http.Client
 )
@@ -33,24 +34,39 @@ type WxData struct {
 
 type CurrentWxData struct {
 	LastUpdateEpoch int       `json:"last_updated_epoch"`
-	LastUpdate      string    `json:"last_updated"`
-	TempC           float64   `json:"temp_c"`
 	TempF           float64   `json:"temp_f"`
-	IsDay           int       `json:"is_day"`
 	Condition       Condition `json:"condition"`
 	WindMPH         float64   `json:"wind_mph"`
-	WindKPH         float64   `json:"wind_kph"`
-	WindDegree      int       `json:"wind_degree"`
 	WindDirection   string    `json:"wind_dir"`
-	FillerEnd1      interface{}
-	Humidity        int `json:"humidity"`
-	FillerEnd2      interface{}
+	Humidity        int       `json:"humidity"`
+	Sunset          string    `json:"sunset"`
 }
 
 type Condition struct {
 	Text string `json:"text"`
 	Icon string `json:"icon"`
 	Code int    `json:"code"`
+}
+
+type AstronomyData struct {
+	Location  Location `json:"location"`
+	Astronomy Astro    `json:"astronomy"`
+}
+
+type Location struct {
+	Name    string `json:"name"`
+	Region  string `json:"region"`
+	Country string `json:"country"`
+}
+
+type Astro struct {
+	AstroData AstroData `json:"astro"`
+}
+
+type AstroData struct {
+	Sunrise      string `json:"sunrise"`
+	Sunset       string `json:"sunset"`
+	AstroFiller2 interface{}
 }
 
 // Check if correct password was provided to gin access to admin menu and admin functionalities.
@@ -222,15 +238,27 @@ func GetDefaultImages() [][]string {
 
 func CurrentWeather() (WxData, error) {
 	var wxData WxData
-	wxURL = strings.Replace(wxURL, "{{token}}", os.Getenv(weatherApiToken), 1)
+	var wxURL = strings.Replace(wxURL, "{{token}}", os.Getenv(weatherApiToken), 1)
 
 	err := getJson(wxURL, &wxData)
 	if err != nil {
 		return WxData{}, err
 	}
-	// rounding the temperature & windspeed... (no decimals needed)
+	// rounding the temperature & windspeed... (no decimals needed).
 	wxData.Current.TempF = math.Round(wxData.Current.TempF)
 	wxData.Current.WindMPH = math.Round(wxData.Current.WindMPH)
+
+	var astronomyData AstronomyData
+	var astroURL = strings.Replace(astroURL, "{{token}}", os.Getenv(weatherApiToken), 1)
+	astroURL = strings.Replace(astroURL, "{{today}}", time.Now().Format("2006-01-02"), 1)
+
+	err = getJson(astroURL, &astronomyData)
+	if err != nil {
+		return WxData{}, err
+	}
+	// Add the sunset time to the weather object.
+	wxData.Current.Sunset = astronomyData.Astronomy.AstroData.Sunset
+
 	return wxData, nil
 }
 
